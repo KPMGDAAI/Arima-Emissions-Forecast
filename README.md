@@ -1,54 +1,63 @@
-# Fore Casting Emissions - Upstream Use Case
+# Emissions Forecasting Using ARIMA
 
 ## How to Use This Repository
 
-This repository contains all the components necessary to predict flaring emissions using operational data from oil rigs with a **Random Forest Regressor**. The structure of the repository is as follows:
+This repository contains all the necessary components to forecast emissions from multiple sources (like flaring, venting, and power generation) using the ARIMA model. The structure of the repository is as follows:
 
--   **Data**: This folder contains the **adnoc_flaring_emissions_data.csv** file. This dataset includes features such as production volume, gas flaring rates, maintenance status, equipment health scores, and more. These features are critical inputs for predicting flaring emissions.
-    
--   **Notebook**: This folder contains the Jupyter notebook that walks you through the entire process, from loading the data to preprocessing it, building a Random Forest model, and making predictions for emission reductions.
-    
--   **Dashboard**: This folder includes any Power BI or other visualization dashboards used for monitoring predicted emissions and identifying trends.
-    
+### DATA
+
+This folder contains the CSV file with historical emissions data for various sources. The data is crucial for running the forecasting models.
+
+### NOTEBOOK
+
+This folder includes the Jupyter notebook, which provides a step-by-step guide to loading the data, setting up ARIMA models, forecasting emissions for individual sources, and visualizing total emissions.
+
+### DASHBOARD
+
+This folder contains the scripts and visualizations that assist in analyzing emissions forecast results, offering insights through interactive dashboards.
+
+----------
 
 ## Business Use Case
 
-Effective monitoring and prediction of flaring emissions are critical for optimizing upstream oil operations, reducing environmental impact, and ensuring compliance with regulatory requirements. This project leverages operational data and machine learning techniques to:
+![enter image description here](https://i.pinimg.com/736x/60/60/f2/6060f272a12cc311bc7dfe6d13a19caa.jpg)
 
--   **Predict flaring emissions** based on real-time operational data, allowing ADNOC to optimize rig operations and reduce emissions.
--   **Enhance compliance** with local and international environmental regulations by providing accurate emission forecasts.
--   **Identify critical factors** affecting emissions, such as equipment health and flaring rates, enabling proactive interventions to minimize emissions.
+Forecasting emissions is critical for ADNOC to make data-driven decisions and meet regulatory requirements. This project enables ADNOC to:
+
+-   **Forecast emissions for each source** (like flaring, venting, and power generation) to manage environmental impact.
+-   **Plan proactively** to avoid regulatory breaches by forecasting total emissions.
+-   **Optimize operations** by visualizing and predicting where emissions might spike in the future, allowing for better planning.
+
+----------
 
 ## Project Structure
 
-### Step 1: Loading and Analyzing Operational Data
+![enter image description here](https://i.pinimg.com/736x/44/da/14/44da1474bff6159da1fe39c7b4eba7ca.jpg)
 
-The first step involves loading the operational data into a pandas DataFrame. This dataset forms the foundation for analyzing flaring activities. Instructions for loading the dataset are provided in the notebook, along with an initial exploration of the data to ensure it's ready for modeling.
+### Step 1: Loading the Emissions Data
 
-### Step 2: Preprocessing the Data
+The first step is loading the emissions data into a pandas DataFrame. This data includes emissions from different sources (flaring, venting, power generation), providing a foundation for our forecasting efforts.
 
-Once the data is loaded, the next step is to preprocess the dataset. This includes removing irrelevant columns, scaling the features for better model performance, and splitting the data into training and testing sets. Proper preprocessing is crucial for building an accurate predictive model.
+### Step 2: Understanding ARIMA
 
-### Step 3: Building and Training the Random Forest Model
+ARIMA (AutoRegressive Integrated Moving Average) is a time series forecasting technique that uses historical patterns to predict future values. This step explains how ARIMA works and why it's suitable for predicting emissions.
 
-In this step, the notebook walks you through building the **Random Forest Regressor** model. You’ll learn how to select the right hyperparameters, fit the model to the training data, and make predictions on the test data. This model is the backbone of the flaring emissions prediction process.
+### Step 3: Setting Up the ARIMA Models for Each Emission Source
 
-### Step 4: Evaluating the Model’s Performance
+In this step, an ARIMA model is applied to each source of emissions. The notebook provides code to create subplots comparing actual vs. forecasted emissions, offering a clear view of future trends for each source.
 
-After training the Random Forest model, you will evaluate its performance using key metrics like **Mean Squared Error (MSE)** and **R-squared (R²)**. These metrics help measure how well the model predicts emissions compared to actual flaring data. This step ensures that the model is reliable and can be used to guide operational decisions.
+### Step 4: Forecasting Total Emissions
 
-### Step 5: Visualizing Predicted vs. Actual Emissions
+Once individual sources are forecasted, the total emissions are summed up to predict overall emissions. A final plot compares observed and forecasted total emissions, with a safety limit marked to ensure ADNOC stays within regulatory compliance.
 
-Visualizations play a key role in understanding the accuracy of the model’s predictions. In this step, the notebook guides you through creating scatter plots and residual plots to compare the predicted flaring emissions with actual values, providing insights into any discrepancies.
-
-### Step 6: Analyzing Feature Importance
-
-This step explores the factors that have the greatest impact on flaring emissions, such as equipment health scores or gas flaring rates. By analyzing feature importance, ADNOC can focus on improving the operational factors that most significantly affect emissions.
+----------
 
 ## Dashboard
 
-The **Dashboard** folder contains the Power BI dashboard used to visualize predicted emissions, identify trends, and monitor key indicators in real-time. The dashboard provides actionable insights to optimize operations and reduce flaring emissions.
+The dashboard section provides a visual overview of the emissions forecasts, allowing users to interact with the data and filter by emission source. This helps ADNOC prioritize areas of concern and focus on reducing emissions.
+
+----------
 
 ## Conclusion
 
-This project demonstrates how operational data combined with machine learning techniques can significantly improve the accuracy of flaring emissions predictions. By integrating data analysis, preprocessing, model training, and visualization, this approach enables more informed upstream operational decisions, ultimately saving time, resources, and reducing the environmental impact of oil extraction activities.
+This project demonstrates how ARIMA can be leveraged to forecast emissions from multiple sources. With this forecasting model, ADNOC can make more sustainable and efficient decisions by staying ahead of environmental regulations and managing operational emissions effectively.
