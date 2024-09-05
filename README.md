@@ -1,4 +1,4 @@
-# Predicting Flaring Emissions - Upstream Use Case
+# Fore Casting Emissions - Upstream Use Case
 
 ## How to Use This Repository
 
