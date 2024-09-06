@@ -54,6 +54,8 @@ Once individual sources are forecasted, the total emissions are summed up to pre
 
 ## Dashboard
 
+![enter image description here](https://i.pinimg.com/736x/89/25/bf/8925bfb9c94f73e5d66fe88f064bd864.jpg)
+
 The dashboard section provides a visual overview of the emissions forecasts, allowing users to interact with the data and filter by emission source. This helps ADNOC prioritize areas of concern and focus on reducing emissions.
 
 ----------
